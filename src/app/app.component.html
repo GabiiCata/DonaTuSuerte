@@ -1,7 +1,14 @@
+
 <app-navbar></app-navbar>
 
 <router-outlet></router-outlet>
 
-<!-- <div class="alert {{clase}} alert-dismissible fade show">
+<div class="alert {{clase}} alert-dismissible fade show">
+  <button class="btn btn-info " (click)="testServerConnection ()"> Test Connection </button>
   <strong>{{status}}</strong>
-</div> -->
+</div>
+
+<div class="alert {{clase}} alert-dismissible fade show">
+  <button class="btn btn-info " (click)="login()"> Google Sign In </button>
+  <strong>{{status}}</strong>
+</div>
