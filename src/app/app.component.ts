@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2'
-import { HttpClient } from '@angular/common/http';
+import { RequestService } from './services/request.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
 
-  constructor ( private http: HttpClient){
+  constructor ( private request : RequestService ){
     Swal.fire({
       title: 'Request a hackaton-leaf ? ',
       text: "rq a heroku",
@@ -19,19 +19,18 @@ export class AppComponent {
       confirmButtonText: 'Hacer request'
     }).then((result) => {
       if (result.value) {
-
-        this.http.get( 'https://hackaton-leaf.herokuapp.com/api/v1/test' ).toPromise()
-        .then  ( data => {
-            Swal.fire(
-              'Resultado: ' + data['message'],
-              'ok',
-              'success'
-            )
-          } )
-
         
+        request.testRequest()
+        .then  ( data => {
+          Swal.fire(
+            'Resultado: ' + data['message'],
+            'ok',
+            'success'
+          )
+        } );;
       }
     })
+    
   }
   title = 'hackaton-app';
 }
