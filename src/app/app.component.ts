@@ -12,6 +12,7 @@ export class AppComponent {
   status = 'No conectado'
   clase = 'alert-danger'
   provider = undefined;
+  imgUrl = '';
 
   constructor ( private request : RequestService ){
     
@@ -24,16 +25,20 @@ export class AppComponent {
   
   login (){
     console.log ( this.provider );
-    
+
     firebase.auth().signInWithPopup(this.provider).then(function(result:any) {
       // This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
       // ...
+      console.log ( user.photoURL )
+      debugger;
+      this.imgUrl = user.P.photoURL
 
       console.log ( token )
-      console.log ( user )
+      
+
     }).catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -43,6 +48,8 @@ export class AppComponent {
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       // ...
+
+      console.log ( errorCode + errorMessage )
     });
   }
 
