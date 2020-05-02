@@ -8,7 +8,24 @@ import { RequestService } from './services/request.service';
 })
 export class AppComponent {
 
+  status = 'No conectado'
+  clase = 'alert-danger'
+
   constructor ( private request : RequestService ){
+    
+    request.testRequest().then (data => {
+      if (data ['message'] == 'json de prueba')
+      {
+        this.status = 'Conectado'
+        this.clase = 'alert-success'
+      }
+    })
+    
+  }
+
+   
+
+  sweetRequest(){
     Swal.fire({
       title: 'Request a hackaton-leaf ? ',
       text: "rq a heroku",
@@ -20,7 +37,7 @@ export class AppComponent {
     }).then((result) => {
       if (result.value) {
         
-        request.testRequest()
+       this.request.testRequest()
         .then  ( data => {
           Swal.fire(
             'Resultado: ' + data['message'],
@@ -28,9 +45,9 @@ export class AppComponent {
             'success'
           )
         } );;
+
       }
     })
-    
   }
   title = 'hackaton-app';
 }
