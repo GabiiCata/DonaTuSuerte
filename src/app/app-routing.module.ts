@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ListadoComponent } from './components/listado/listado.component';
 
 const routes: Routes = [
-  //  { path: 'profile', component: ProfileComponent }
+   { path: 'listado', component: ListadoComponent }
 ];
 
 @NgModule({

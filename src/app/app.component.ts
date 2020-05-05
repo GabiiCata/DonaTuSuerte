@@ -32,9 +32,7 @@ export class AppComponent {
       // The signed-in user info.
       var user = result.user;
       // ...
-      console.log ( user.photoURL )
-      debugger;
-      this.imgUrl = user.P.photoURL
+      console.log ( user  )
 
       console.log ( token )
       

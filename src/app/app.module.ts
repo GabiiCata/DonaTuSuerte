@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
+import { ListadoComponent } from './components/listado/listado.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYcl80CVK0LaQF1WOqoLRSOP1RDmBFhRs",
@@ -35,7 +36,8 @@ firebase.initializeApp(firebaseConfig);
     NavbarComponent,
     ProfileComponent,
     InfoComponent,
-    HomeComponent
+    HomeComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,
