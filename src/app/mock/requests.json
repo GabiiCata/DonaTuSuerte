@@ -1,0 +1,60 @@
+{
+    "user" : 
+    {
+        "email": "gabyespina.ge@gmail.com",
+		"password": "String",
+		"avatar": "String",
+		"firstName": "String",
+		"lastName": "String",
+		"country": "String",
+		"dateOfBirth": "Date",
+        "address":
+        {
+			"street": "String",
+			"city": "String",
+			"state": "String",
+			"zip": "String",
+			"lat": "String",
+			"lon": "String"
+		},
+		"phone": "String",
+		"conditions": "Boolean",
+		"score": "Number"
+	} ,
+	
+	"local" : 
+	{
+		"email": "gabyespina.ge@gmail.com",
+		"password": "String",
+		"avatar": "String",
+		"country": "String",
+        "address":
+        {
+			"street": "String",
+			"city": "String",
+			"state": "String",
+			"zip": "String",
+			"lat": "String",
+			"lon": "String"
+		},
+		"phone": "String",
+		"conditions": "Boolean",
+		"cuit" : "123123123",
+		"state": "String"
+	} ,
+	
+	"sorteos" :[
+		{
+			"id" : 123123,
+			"premio" : "aisdasd",
+			"photo"  : "url foto",
+			"finicio": "1234/12/12",
+			"fdesde" : "1234/12/12",
+			"fhasta" : "7777/77/77",
+			"score"  : 123123,
+			"state"  : "String",
+			"winner" : "string"
+		}
+	]
+}
+
