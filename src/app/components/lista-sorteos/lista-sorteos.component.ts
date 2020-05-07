@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-lista-sorteos',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaSorteosComponent implements OnInit {
 
-  constructor() { }
+  sorteos = undefined;
+  
+  constructor( private request: RequestService) { 
+    request.getSorteos ( )
+    .then ( data => 
+      {
+        this.sorteos = data;
+        this.sorteos = this.sorteos.sorteos;
+      }
+    )
+  }
 
   ngOnInit() {
   }

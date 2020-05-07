@@ -1,3 +1,4 @@
-<div class="row" >
-  <app-sorteo *ngFor="let i of [0,1,2,3]" ></app-sorteo>
+<div class="row" *ngFor="let sorteo of sorteos">
+  <p>{{sorteo.photo}}</p>
+  <app-sorteo  sorteo = "{{sorteo}}" ></app-sorteo>
 </div>

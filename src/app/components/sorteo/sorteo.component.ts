@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
 import Swal from 'sweetalert2';
 
@@ -10,16 +10,19 @@ import Swal from 'sweetalert2';
 export class SorteoComponent implements OnInit {
 
   constructor( private request: RequestService) { 
-    request.getSorteos ( )
-    .then ( data => 
-      {
-        this.sorteo = data;
-        this.sorteo = this.sorteo.sorteos[0];
-      }
-    )
+    // request.getSorteos ( )
+    // .then ( data => 
+    //   {
+    //     this.sorteo = data;
+    //     this.sorteo = this.sorteo.sorteos[0];
+    //   }
+    // )
   }
 
+  @Input() sorteo : any;
+
   ngOnInit() {
+    console.log ( "sorteo " + this.sorteo.photo)
   }
   participate(){
     Swal.fire({
@@ -42,7 +45,6 @@ export class SorteoComponent implements OnInit {
     })
   }
 
-  sorteo : any;
 
   
 }
