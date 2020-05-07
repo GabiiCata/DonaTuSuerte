@@ -14,6 +14,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { ListadoComponent } from './components/listado/listado.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { FormsModule  } from '@angular/forms';
+import { SorteoComponent } from './components/sorteo/sorteo.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYcl80CVK0LaQF1WOqoLRSOP1RDmBFhRs",
@@ -37,13 +40,16 @@ firebase.initializeApp(firebaseConfig);
     ProfileComponent,
     InfoComponent,
     HomeComponent,
-    ListadoComponent
+    ListadoComponent,
+    SigninComponent,
+    SorteoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule
+    AngularFireModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
