@@ -46,14 +46,14 @@
 	"sorteos" :[
 		{
 			"id" : 123123,
-			"premio" : "aisdasd",
-			"photo"  : "url foto",
-			"finicio": "1234/12/12",
-			"fdesde" : "1234/12/12",
-			"fhasta" : "7777/77/77",
-			"score"  : 123123,
-			"state"  : "String",
-			"winner" : "string"
+			"premio" : "Canasta de verduras",
+			"photo"  : "assets/images/verduras.jpg",
+			"finicio": "2020/05/06",
+			"fdesde" : "2020/05/07",
+			"fhasta" : "2020/05/17",
+			"score"  : 50000,
+			"state"  : "Activo",
+			"winner" : ""
 		},
 		{
 			"id" : 123123,

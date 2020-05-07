@@ -1,17 +1,30 @@
-<div class="card" style="width: 18rem;">
-  <img src="assets/images/verduras.jpg" class="card-img-top" alt="...">
+
+<div *ngIf="sorteo">
   
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+  <div class="card" style="width: 18rem;">
+    <img src="{{sorteo.photo}}" class="card-img-top" alt="...">
+    
+    <div class="card-body">
+      <h5 class="card-title">{{sorteo.premio}}</h5>
+      <p class="card-text">{{sorteo.score}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Empieza el : {{sorteo.fdesde}}</li>
+      <li class="list-group-item">Finaliza el: {{sorteo.fhasta}}</li>
+    </ul>
+    <div class="card-body">
+      <button class="card-link btn btn-info" (click)="participate()">Participar</button>
+      <a href="#" class="card-link">Detalles</a>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+
 </div>
+
+<div *ngIf="!sorteo">
+  <div class="spinner-border" role="status" aria-disabled="false">
+    <span class="sr-only">Loading...</span>
+  </div>
+
+</div>
+

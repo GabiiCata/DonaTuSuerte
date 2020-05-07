@@ -30,4 +30,9 @@ export class RequestService {
 
   }
 
+  getSorteos ()
+  {
+    return this.http.get("./assets/mock/requests.json").toPromise().then ( data => { return data; })
+  }
+
 }
