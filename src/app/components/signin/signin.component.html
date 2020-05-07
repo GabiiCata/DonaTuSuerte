@@ -1,0 +1,87 @@
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nombre</label>
+            <input [(ngModel)]="user.firstName" name="first" class="form-control"  >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Apellido</label>
+            <input [(ngModel)]="user.lastName" type="text" class="form-control" >
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input [(ngModel)]="user.email" type="email" class="form-control" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input [(ngModel)]="user.password" type="password" class="form-control" >
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Direccion</label>
+            <input [(ngModel)]="user.address.street" type="address" class="form-control" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Localidad</label>
+            <input [(ngModel)]="user.address.city" type="city" class="form-control" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Estado/Pais</label>
+            <input [(ngModel)]="user.address.state" type="contry" class="form-control" >
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Codigo Postal</label>
+            <input [(ngModel)]="user.address.zip" type="password" class="form-control" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Pais</label>
+          <input [(ngModel)]="user.country" type="text" class="form-control"  placeholder="Url de foto">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Foto</label>
+          <input [(ngModel)]="user.photo" type="text" class="form-control"  placeholder="Url de foto">
+        </div>
+
+        <div class="form-group">
+          <label for="inputAddress">Telefono</label>
+          <input [(ngModel)]="user.phone" type="text" class="form-control"  placeholder="Url de foto">
+        </div>
+
+        <div class="form-group">
+          <label for="inputAddress">Condiciones</label>
+          <input [(ngModel)]="user.conditions" type="Checkbox" class="form-control"  placeholder="Url de foto">
+        </div>
+
+        <div class="form-group">
+          <label for="inputAddress">Fecha nacimiento</label>
+          <input [(ngModel)]="user.dateOfBirth" type="text" class="form-control"  placeholder="Url de foto">
+        </div>
+        <button class="btn btn-primary" (click)="signIn()">Registrarse</button>
+    </div>
+    
+    <div class="col">
+      <div class="btn btn-light">
+        <a class="oauth-container btn darken-4 white black-text" (click)="login()" style="text-transform:none">
+            <div class="left">
+                <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            </div>
+            Login with Google
+        </a>
+      </div> 
+    </div>
+  </div>
+</div>
