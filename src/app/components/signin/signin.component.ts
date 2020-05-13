@@ -18,7 +18,7 @@ export class SigninComponent implements OnInit {
   user = {
     "email": "",
     "password": "",
-    "photo": "",
+    "photo": null,
     "firstName": "",
     "lastName": "",
     "country": "",
@@ -34,9 +34,15 @@ export class SigninComponent implements OnInit {
     "score": "",
   }
 
-  signIn(){
-    console.log ( this.user )
+  onFileSelected(event)
+  {
+    this.user.photo = new FormData();
+    this.user.photo.append ('photo' , event.target.files[0] , event.target.files[0].name ) 
+  }
 
+  signIn()
+  {
+    console.log ( this.user )
     this.request.signIn( this.user );
   }
 

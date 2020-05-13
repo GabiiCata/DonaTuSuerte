@@ -52,7 +52,7 @@
         </div>
         <div class="form-group">
           <label for="inputAddress">Foto</label>
-          <input [(ngModel)]="user.photo" type="text" class="form-control"  placeholder="Url de foto">
+          <input type="file" class="form-control"  placeholder="Url de foto" (change)="onFileSelected($event)">
         </div>
 
         <div class="form-group">

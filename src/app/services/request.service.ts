@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
 export class RequestService {
 
   constructor(private http: HttpClient) { }
@@ -11,13 +12,14 @@ export class RequestService {
   url = 'https://hackaton-leaf.herokuapp.com/api/v1';
 
   testRequest(){
-    return this.http.get( this.url ).toPromise().then( data => { return data });
+    return this.http.get( this.url + "/test" ).toPromise().then( data => { return data });
   }
 
 
   signIn( body )
   {
     let uri = "/users/register";
+    console.log ( body )
 
     // let httpHeaders = new HttpHeaders({
     //   'Authorization' : 'Bearer ' + localStorage.getItem('token')
@@ -27,12 +29,12 @@ export class RequestService {
       .then( data => {
         console.log ( data ) ;
       }) 
-
   }
 
   getSorteos ()
   {
     return this.http.get("./assets/mock/requests.json").toPromise().then ( data => { return data; })
   }
+  
 
 }

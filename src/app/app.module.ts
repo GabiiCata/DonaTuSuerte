@@ -13,7 +13,6 @@ import { HomeComponent } from './components/home/home.component'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import * as firebase from 'firebase';
-import { ListadoComponent } from './components/listado/listado.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { FormsModule  } from '@angular/forms';
 import { SorteoComponent } from './components/sorteo/sorteo.component';
@@ -41,7 +40,6 @@ firebase.initializeApp(firebaseConfig);
     ProfileComponent,
     InfoComponent,
     HomeComponent,
-    ListadoComponent,
     SigninComponent,
     SorteoComponent,
     ListaSorteosComponent

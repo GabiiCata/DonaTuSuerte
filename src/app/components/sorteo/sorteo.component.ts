@@ -36,11 +36,17 @@ export class SorteoComponent implements OnInit {
       confirmButtonText: 'Participar !'
     }).then((result) => {
       if (result.value) {
+      this.request.testRequest().then(data => {
+        let variable:any = data;
+        console.log ( variable.message )
         Swal.fire(
           'Paticipando',
-          'Checkea tus sorteos activos',
+          'Request : '  + variable.message ,
           'success'
         )
+      })
+      
+        
       }
     })
   }
