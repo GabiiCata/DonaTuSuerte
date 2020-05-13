@@ -15,6 +15,7 @@ export class SigninComponent implements OnInit {
     this.provider = new firebase.auth.GoogleAuthProvider();
   }
 
+
   user = {
     "email": "",
     "password": "",
@@ -46,7 +47,9 @@ export class SigninComponent implements OnInit {
     this.request.signIn( this.user );
   }
 
-
+  simpleLogin(){
+    this.request.login (this.user.email, this.user.password)
+  }
 
   login (){
     console.log ( this.provider );

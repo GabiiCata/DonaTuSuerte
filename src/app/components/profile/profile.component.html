@@ -1,3 +1,30 @@
-<p>
-  profile works!
-</p>
+<div *ngIf="user">
+<div class="row" style="width: 18rem;">
+  <div class="card">
+  <img src="assets/images/gokuuser.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{user.firstName}}  {{user.lastName}}</h5>
+   </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Mail: {{user.email}}</li>
+    <li class="list-group-item">Pais: {{user.country}}</li>
+    <li class="list-group-item">Nacimiento: {{user.dateOfBirth}}</li>
+    <li class="list-group-item">Contacto: {{user.phone}}</li>
+    <li class="list-group-item">Acepto Condiciones: {{user.conditions}}</li>
+    
+  </ul>
+  <div class="card-body">
+    <button class="btn btn-info">Editar Perfil</button> 
+    
+    <button class="btn btn-danger">Cerrar Sesion</button>
+  </div>
+</div>
+<div class="card">
+  <li class="list-group-item">Puntos <h2>{{user.score}}</h2></li>
+</div>
+
+</div>
+</div>
+
+
+ 

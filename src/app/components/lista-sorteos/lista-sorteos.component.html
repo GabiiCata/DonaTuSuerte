@@ -1,4 +1,3 @@
-<div class="row" *ngFor="let sorteo of sorteos">
-  <p>{{sorteo.photo}}</p>
-  <app-sorteo  sorteo = "{{sorteo}}" ></app-sorteo>
+<div class="row" >
+  <app-sorteo  *ngFor="let sorteo of sorteos" [sorteo] = sorteo ></app-sorteo>
 </div>

@@ -83,5 +83,13 @@
         </a>
       </div> 
     </div>
+    <div class="col">
+      Iniciar Sesion
+      <br>
+      
+      <input [(ngModel)]="user.email" type="email">
+      <input [(ngModel)]="user.password" type="password"><br>
+      <button class="btn btn-info" (click)="simpleLogin()"> Login </button>
+    </div>
   </div>
 </div>

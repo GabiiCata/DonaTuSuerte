@@ -16,6 +16,7 @@ export class ListaSorteosComponent implements OnInit {
       {
         this.sorteos = data;
         this.sorteos = this.sorteos.sorteos;
+        console.log ( this.sorteos )
       }
     )
   }
