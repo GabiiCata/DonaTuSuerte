@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { PassThrough } from 'stream';
 import Swal from 'sweetalert2';
 
 @Injectable({
@@ -9,24 +8,39 @@ import Swal from 'sweetalert2';
 
 export class RequestService {
 
-  constructor(private http: HttpClient) { }
+  private config;
+  private url;
 
-  url = 'https://hackaton-leaf.herokuapp.com/api/v1';
+  constructor(private http: HttpClient) 
+  {
+     this.getConfig().then ( data => { return   this.configEnviroment ( data ["prod"] )    }); 
+  }
+
+  private configEnviroment ( data )
+  {
+    this.url = this.config.url;
+  }
+  
+  private getHeaders()
+  {
+    return  new HttpHeaders({
+      'Authorization' :  'Bearer ' + localStorage.getItem('token')
+    });
+  }
 
   currentUser : any;
 
-  getUser (){
+  getUser ()
+  {
+    let uri = '/users/' + localStorage.getItem('id' );
 
-    // let httpHeaders = new HttpHeaders({
-    //    'Authorization' : 'Bearer ' + localStorage.getItem('token')
-    //  });
-    let httpHeaders = new HttpHeaders({
-      'Authorization' :  'Bearer ' + localStorage.getItem('token')
-    });
+    let httpHeaders = this.getHeaders();
 
-    return this.post ( httpHeaders, null, '/users/' + localStorage.getItem('id' ))
+    return this.post ( httpHeaders , null, uri)
     .then(data => { return data } ) 
   }
+
+  
 
   testRequest(){
     return this.http.get( this.url + "/test" ).toPromise().then( data => { return data });
@@ -43,11 +57,7 @@ export class RequestService {
   signIn( body )
   {
     let uri = "/users/register";
-    console.log ( body )
 
-    // let httpHeaders = new HttpHeaders({
-    //   'Authorization' : 'Bearer ' + localStorage.getItem('token')
-    // });
 
     this.http.post ( this.url + uri , body ).toPromise()
       .then( data => 
@@ -98,6 +108,10 @@ export class RequestService {
   getSorteos ()
   {
     return this.http.get("./assets/mock/requests.json").toPromise().then ( data => { return data; })
+  }
+
+  private getConfig(){
+    return this.http.get("./assets/properties/config.json").toPromise().then ( data => { return data; })
   }
   
 

@@ -7,7 +7,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { ListaSorteosComponent } from './components/lista-sorteos/lista-sorteos.component';
 
 const routes: Routes = [
-   { path: 'home', component: HomeComponent },
+   { path: '', component: HomeComponent },
    { path: 'info', component: InfoComponent },
    { path: 'lista-sorteos', component: ListaSorteosComponent },
    { path: 'profile', component: ProfileComponent },

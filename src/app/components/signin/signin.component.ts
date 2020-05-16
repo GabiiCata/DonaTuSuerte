@@ -15,6 +15,7 @@ export class SigninComponent implements OnInit {
     this.provider = new firebase.auth.GoogleAuthProvider();
   }
 
+  formData = new FormData();
 
   user = {
     "email": "",
@@ -35,16 +36,35 @@ export class SigninComponent implements OnInit {
     "score": "",
   }
 
-  onFileSelected(event)
+
+  
+
+
+
+  addInFormData ( key , event )
   {
-    this.user.photo = new FormData();
-    this.user.photo.append ('photo' , event.target.files[0] , event.target.files[0].name ) 
+    if ( event.target.value == 'on')
+      this.formData.set ( key , "true" );
+    else
+      this.formData.set ( key , event.target.value );
+
+    console.log ( this.formData.get ( key ))
+  }
+
+  
+
+  onFileSelected( event )
+  {
+    // this.user.photo = new FormData();
+    // this.user.photo.append ('photo' , event.target.files[0] , event.target.files[0].name ) 
+    this.formData.append ( 'photo' , event.target.files[0] )
   }
 
   signIn()
   {
-    console.log ( this.user )
-    this.request.signIn( this.user );
+    Object.keys( this.user ).forEach((key)=>{ this.formData.append( key,this.user[key] )});
+    console.log ( this.formData )
+    this.request.signIn( this.formData );
   }
 
   simpleLogin(){
