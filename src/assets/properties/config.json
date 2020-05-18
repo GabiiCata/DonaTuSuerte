@@ -1,5 +1,5 @@
 {
     "prod" : {
-        "url" : "https://hackaton-leaf.herokuapp.com/api/v1"
+        "url" : "https://dona-tu-suerte-test.herokuapp.com/api/v1"
     }
 }

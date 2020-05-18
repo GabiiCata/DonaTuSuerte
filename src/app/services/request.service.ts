@@ -18,7 +18,8 @@ export class RequestService {
 
   private configEnviroment ( data )
   {
-    this.url = this.config.url;
+    this.url = data.url;
+    console.log ( this.url );
   }
   
   private getHeaders()
@@ -83,20 +84,23 @@ export class RequestService {
       'Content-Type' : 'application/json'
     });
 
-    this.http.post ( this.url + '/users/login' , body , { headers: httpHeaders} ).toPromise()
+    console.log ( this.url + '/users/signin' + "> " + body)
+
+    this.http.post ( this.url + '/users/signin' , body , { headers: httpHeaders} ).toPromise()
       .then ( data => 
         {
           let response :any = data;
-          localStorage.setItem('token',response.token)
-          localStorage.setItem('id',response.user._id)
+          localStorage.setItem('token',response.data.token)
+          localStorage.setItem('id',response.data.user._id)
           Swal.fire({
             icon: 'success',
-            title: 'Inicio correctamente como: ' + response.user.firstName + " " + response.user.lastName,
+            title: 'Inicio correctamente como: ' + response.data.user.firstName + " " + response.data.user.lastName,
             showConfirmButton: false,
             timer: 1500
           })
         })
       .catch( err => {
+        console.log ( err )
         Swal.fire({
           icon: 'error',
           title: 'Fallo en inicio de sesion',
