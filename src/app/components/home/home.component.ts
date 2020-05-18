@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  status = 'primary'
+
+  constructor( private request : RequestService) {
+    
+   }
 
   ngOnInit() {
   }
+
+  check()
+  {
+    console.log ( 'conectando.')
+    this.status = 'warning'
+    this.request.testRequest().then( data => {
+      this.status= 'success'
+    }) 
+  }
+
 
 }

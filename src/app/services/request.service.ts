@@ -44,7 +44,8 @@ export class RequestService {
   
 
   testRequest(){
-    return this.http.get( this.url + "/test" ).toPromise().then( data => { return data });
+    console.log ( "test-connection: loading..." )
+    return this.http.get( this.url + "/test" ).toPromise().then( data => {  console.log ( "test-connection: connected" ) ; return data });
   }
 
   post (header ,  body , uri ){

@@ -1,11 +1,17 @@
 
 <nav class="navbar navbar-dark bg-primary">
   <form class="form-inline">
-    <a class="btn bg-primary" href="/home" type="button">Inicio</a>
-    <a class="btn bg-primary" href="/info" type="button">Informacion</a>
-    <a class="btn bg-primary" href="/lista-sorteos" type="button">Lista de Sorteo</a>
-    <a class="btn bg-primary" href="/signIn" type="button">Log In</a>
-    <a class="btn bg-primary" href="/profile" type="button">Perfil</a>
+    <a class="btn bg-primary text-white" href="/home" type="button">Inicio</a>
+    <a class="btn bg-primary text-white" href="/info" type="button">Informacion</a>
+    <a class="btn bg-primary text-white" href="/lista-sorteos" type="button">Lista de Sorteo</a>
+    <a class="btn bg-primary text-white" href="/signIn" type="button">Log In</a>
+    <a class="btn bg-primary text-white" href="/profile" type="button">Perfil</a>
   </form>
+  <button class="btn btn-{{status}}" type="button" (click)="check()" >
+    <span *ngIf="status=='warning'" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span *ngIf="status=='primary'"> Test server connection</span>
+    <span *ngIf="status=='warning'"> Connecting...</span>
+    <span *ngIf="status=='success'"> Connected! </span>
+ </button>
 </nav>
 
