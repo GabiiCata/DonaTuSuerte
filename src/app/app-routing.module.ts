@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { InfoComponent } from './components/info/info.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { ListaSorteosComponent } from './components/lista-sorteos/lista-sorteos.component';
+import { SorteoDetalleComponent } from './components/sorteo-detalle/sorteo-detalle.component';
 
 const routes: Routes = [
    { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
    { path: 'lista-sorteos', component: ListaSorteosComponent },
    { path: 'profile', component: ProfileComponent },
    { path: 'signIn', component: SigninComponent },
+   { path: 'sorteo-detalle', component: SorteoDetalleComponent },
 ];
 
 @NgModule({

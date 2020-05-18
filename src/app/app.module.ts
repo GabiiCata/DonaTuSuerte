@@ -18,6 +18,7 @@ import { FormsModule  } from '@angular/forms';
 import { SorteoComponent } from './components/sorteo/sorteo.component';
 import { ListaSorteosComponent } from './components/lista-sorteos/lista-sorteos.component';
 import { BuscarSorteoComponent } from './components/buscar-sorteo/buscar-sorteo.component';
+import { SorteoDetalleComponent } from './components/sorteo-detalle/sorteo-detalle.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYcl80CVK0LaQF1WOqoLRSOP1RDmBFhRs",
@@ -44,7 +45,8 @@ firebase.initializeApp(firebaseConfig);
     SigninComponent,
     SorteoComponent,
     ListaSorteosComponent,
-    BuscarSorteoComponent
+    BuscarSorteoComponent,
+    SorteoDetalleComponent
   ],
   imports: [
     BrowserModule,
