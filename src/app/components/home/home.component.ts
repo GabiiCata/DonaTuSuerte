@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   status = 'primary'
 
-  constructor( private request : RequestService) {
+  constructor( private request : RequestService , private vps: ViewportScroller) {
     
    }
 
@@ -24,6 +25,12 @@ export class HomeComponent implements OnInit {
     this.request.testRequest().then( data => {
       this.status= 'success';
     }) 
+  }
+
+
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
 
