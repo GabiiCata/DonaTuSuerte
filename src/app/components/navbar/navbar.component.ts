@@ -23,7 +23,22 @@ export class NavbarComponent implements OnInit {
     this.request.testRequest().then( data => {
       this.status= 'success'
 
-      Swal.fire('Conected',data.message)
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Connected !'
+      })
     }) 
   }
 

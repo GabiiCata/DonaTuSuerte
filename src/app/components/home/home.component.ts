@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     console.log ( 'conectando.')
     this.status = 'warning'
     this.request.testRequest().then( data => {
-      this.status= 'success'
+      this.status= 'success';
     }) 
   }
 

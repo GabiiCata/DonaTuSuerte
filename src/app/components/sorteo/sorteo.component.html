@@ -1,22 +1,21 @@
 <div *ngIf="sorteo">
     
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;  text-align: center;"  >
+    <div class="card-body" >
+      <h4 class="card-title">{{sorteo.premio}}</h4>
+      <h5 class="card-text">{{sorteo.score}} PUNTOS !</h5>
+    </div>
     <img src="{{sorteo.photo}}" class="card-img-top" alt="...">
     
-    <div class="card-body">
-      <h5 class="card-title">{{sorteo.premio}}</h5>
-      <p class="card-text">{{sorteo.score}}</p>
-    </div>
+    
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Empieza el : {{sorteo.fdesde}}</li>
-      <li class="list-group-item">Finaliza el: {{sorteo.fhasta}}</li>
+      
+      <li class="list-group-item">Finaliza: <strong> {{sorteo.fhasta}} </strong></li>
     </ul>
-    <div class="card-body">
-      <button class="card-link btn btn-info" (click)="participate()">Participar</button>
-      <a href="#" class="card-link">Detalles</a>
-    </div>
+    <div class="card-body card-link btn btn-success" (click)="participate()"> <h4>Participar</h4>
+     </div>
   </div>
-</div>
+
 
 <div *ngIf="!sorteo">
   <div class="spinner-border" role="status" aria-disabled="false">
@@ -24,4 +23,3 @@
   </div>
 
 </div>
-
