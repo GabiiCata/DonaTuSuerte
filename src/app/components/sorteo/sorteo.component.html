@@ -1,4 +1,4 @@
-<div *ngIf="sorteo">
+<!-- <div *ngIf="sorteo">
   <div >
   <div class="card" style="width: 18rem;  text-align: center;"  >
     <div class="card-body" >
@@ -24,4 +24,15 @@
     <span class="sr-only">Loading...</span>
   </div>
 
-</div>
+
+
+</div> -->
+
+
+
+  <img class="img-fluid" src="{{sorteo.photo}}" alt="10"> 
+      <h5>{{sorteo.premio}} {{sorteo.score}}</h5>
+      <h6>SORTEA {{sorteo.fhasta}}</h6>
+      <h6>{{sorteo.score}} PUNTOS</h6>             
+      <div class="btn btn-success" (click)="participate()"> <h4>Participar</h4></div>
+ 

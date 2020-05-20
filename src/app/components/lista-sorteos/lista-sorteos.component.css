@@ -1,5 +1,12 @@
 
-
+/* 
 app-sorteo{
     padding: 4%;
-}
+} */
+
+
+.sorteos { 
+	background-color:white; 
+	padding:0px;
+	 margin:40px;
+ }

@@ -1,3 +1,5 @@
-<div class="row" >  
-  <app-sorteo  *ngFor="let sorteo of sorteos" [sorteo] = sorteo ></app-sorteo>
+<div class="row">
+<div class="col-2 sorteos" *ngFor="let sorteo of sorteos">
+  <app-sorteo   [sorteo] = sorteo ></app-sorteo>
+</div>
 </div>

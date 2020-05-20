@@ -79,7 +79,8 @@
 			"score"  : 50000,
 			"state"  : "Activo",
 			"winner" : ""
-		},
+		}
+		,
 		{
 			"id" : 123123,
 			"numeroSorteo" : 4,
