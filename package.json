@@ -23,10 +23,10 @@
     "@ng-bootstrap/ng-bootstrap": "^4.2.2",
     "animate.css": "^3.7.2",
     "core-js": "^2.5.4",
-    "firebase": "^7.14.2",
+    "firebase": "^7.14.4",
     "rxjs": "~6.3.3",
-    "sweetalert2": "^9.10.12",
-    "tslib": "^1.9.0",
+    "sweetalert2": "^9.11.0",
+    "tslib": "^1.13.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
