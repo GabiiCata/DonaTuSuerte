@@ -1,5 +1,59 @@
 
 
+ 
+   body {
+    background-color: #cccccc;    
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  h5 {
+    text-align: center;
+  }
+  
+  h6 {
+    text-align: center;
+  }
+  
+  section {
+    margin-top:30px;
+  }
+    
+  /* Solid border */
+  hr.solid {
+    border-top: 3px solid #bbb;
+    margin-top:50px;
+  }
+  
   img {
-     height: 240px;
-   }
+    height:150px;
+  }
+  input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 80%;
+  }
+  
+/*   
+  .container-fluid {
+    margin-top:80px;
+    padding-left:200px;
+    
+  }
+  
+  .row {
+    justify-content: center;
+  }
+  
+  .sorteos {
+    background-color:white;
+    padding:0px;
+    margin:40px;
+  } */
+  
