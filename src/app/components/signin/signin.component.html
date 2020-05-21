@@ -1,9 +1,10 @@
 
-
-
-
+ <video autoplay muted loop id="myVideo">
+  <source src="assets/video/video1.mp4" type="video/mp4" >
+</video>
 
 <div class="container">
+ 
   <div class="row">
     <div class="col">
         
@@ -73,6 +74,14 @@
     </div>
     
     <div class="col">
+      <div class="col">
+        Iniciar Sesion
+        <br>
+        <input [(ngModel)]="user.email" type="email">
+        <input [(ngModel)]="user.password" type="password"><br>
+        <button class="btn btn-info" (click)="simpleLogin()"> Login </button>
+      </div>
+      
       <div class="btn btn-light">
         <a class="oauth-container btn darken-4 white black-text" (click)="login()" style="text-transform:none">
             <div class="left">
@@ -83,12 +92,6 @@
         </a>
       </div> 
     </div>
-    <div class="col">
-      Iniciar Sesion
-      <br>
-      <input [(ngModel)]="user.email" type="email">
-      <input [(ngModel)]="user.password" type="password"><br>
-      <button class="btn btn-info" (click)="simpleLogin()"> Login </button>
-    </div>
+    
   </div>
 </div>
