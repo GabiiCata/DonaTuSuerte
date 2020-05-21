@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import {   Router  } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export class RequestService {
 
   private config;
   private url;
-
-  constructor(private http: HttpClient) 
+ 
+  constructor(private http: HttpClient, private router : Router) 
   {
      this.getConfig().then ( data => { return   this.configEnviroment ( data ["prod"] )    }); 
   }
@@ -90,16 +91,20 @@ export class RequestService {
     this.http.post ( this.url + '/users/signin' , body , { headers: httpHeaders} ).toPromise()
       .then ( data => 
         {
-          console.log ( data )
+          
           let response :any = data;
+          console.log ( response.data.user )
           localStorage.setItem('token',response.data.token)
           localStorage.setItem('id',response.data.user._id)
+          localStorage.setItem('user', JSON.stringify( response.data.user ))
+          
           Swal.fire({
             icon: 'success',
             title: 'Inicio correctamente como: ' + response.data.user.firstName + " " + response.data.user.lastName,
             showConfirmButton: false,
             timer: 1500
           })
+          this.router.navigate ( ['/mi-cuenta']  );
         })
       .catch( err => {
         console.log ( err )
