@@ -1,3 +1,71 @@
-<p>
-  signup works!
-</p>
+<video autoplay muted loop id="myVideo">
+  <source src="assets/video/video1.mp4" type="video/mp4" >
+</video>
+
+<div class="row">
+  <div class="col">
+      
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Nombre</label>
+          <input [(ngModel)]="user.firstName" name="first" class="form-control"  >
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Apellido</label>
+          <input [(ngModel)]="user.lastName" type="text" class="form-control" >
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input [(ngModel)]="user.email" type="email" class="form-control" >
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Password</label>
+          <input [(ngModel)]="user.password" type="password" class="form-control" >
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Direccion</label>
+          <input [(ngModel)]="user.address.street" type="address" class="form-control" >
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Localidad</label>
+          <input [(ngModel)]="user.address.city" type="city" class="form-control" >
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Estado/Pais</label>
+          <input [(ngModel)]="user.address.state" type="contry" class="form-control" >
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Codigo Postal</label>
+          <input [(ngModel)]="user.address.zip" type="password" class="form-control" >
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Pais</label>
+        <input [(ngModel)]="user.country" type="text" class="form-control"  placeholder="Url de foto">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Foto</label>
+        <input type="file" class="form-control"  placeholder="Url de foto" (change)="onFileSelected($event)">
+      </div>
+
+      <div class="form-group">
+        <label for="inputAddress">Telefono</label>
+        <input [(ngModel)]="user.phone" type="text" class="form-control"  placeholder="Url de foto">
+      </div>
+
+      <div class="form-group">
+        <label for="inputAddress">Condiciones</label>
+        <input [(ngModel)]="user.conditions" type="Checkbox" class="form-control"  placeholder="Url de foto">
+      </div>
+
+      <div class="form-group">
+        <label for="inputAddress">Fecha nacimiento</label>
+        <input [(ngModel)]="user.dateOfBirth" type="text" class="form-control"  placeholder="Url de foto">
+      </div>
+      <button class="btn btn-primary" (click)="signIn()">Registrarse</button>
+  </div>

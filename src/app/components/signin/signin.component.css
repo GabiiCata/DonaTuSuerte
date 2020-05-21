@@ -4,9 +4,11 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
+  width: 350px;
+
+  padding: 30px;
   margin-top: 70px;
+  text-align: center;
 }
 
 #myVideo {
@@ -16,3 +18,44 @@
     min-width: 100%;
     min-height: 100%;
   }
+
+
+.card{
+    background-color: transparent;
+    border: hidden;
+ 
+ 
+}
+
+img.userlogin{
+    width: 80px;
+
+}
+
+input{
+    text-align: center;
+}
+
+div.texto{
+    position: relative;
+      color: #f1f1f1;
+    width: 350px;
+  
+     text-align: center;
+     font-weight: 300;
+     font-size: xx-large;
+}
+
+
+.form-label {
+ }
+
+.form-input + .form-label {
+
+   transition: transform 1s;
+  display: inline-block;
+}
+
+.form-input:focus + .form-label:focus {
+  transform:  translateY(-30px) translateX(-180px) scale(0.8);
+ }

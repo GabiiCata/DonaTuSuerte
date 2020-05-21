@@ -8,6 +8,7 @@ import { ListaSorteosComponent } from './components/lista-sorteos/lista-sorteos.
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { MiCuentaComponent } from './components/mi-cuenta/mi-cuenta.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
    { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
    { path: 'lista-sorteos', component: ListaSorteosComponent },
    { path: 'profile', component: ProfileComponent },
    { path: 'signIn', component: SigninComponent },
+   { path: 'signUp', component: SignupComponent },
    { path: 'contacto', component: ContactoComponent },
    { path: 'mi-cuenta', component: MiCuentaComponent , canActivate:[AuthGuard]}
 ];
