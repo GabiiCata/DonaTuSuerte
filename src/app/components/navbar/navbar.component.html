@@ -1,7 +1,8 @@
 
-<nav class="navbar navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-dark bg-primary">
   <form class="form-inline">
     <a class="btn bg-primary text-white" href="/home" type="button">Inicio</a>
+    <a class="btn bg-primary text-white" (click)="scrollTo('home')" type="button">GoHome</a>
     <a class="btn bg-primary text-white" href="/info" type="button">Informacion</a>
     <a class="btn bg-primary text-white" href="/lista-sorteos" type="button">Lista de Sorteo</a>
     <a class="btn bg-primary text-white" href="/signIn" type="button">Log In</a>
@@ -13,5 +14,34 @@
     <span *ngIf="status=='warning'"> Connecting...</span>
     <span *ngIf="status=='success'"> Connected! </span>
  </button>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand" href="/home">DonaTuSuerte</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a class="nav-link" (click)="scrollTo('quienessomos')" type="button">QuienesSomos?</a>
+      <li class="nav-item"><a class="nav-link" (click)="scrollTo('quehacemos')" type="button">QueHacemos?</a>
+      <li class="nav-item"><a class="nav-link" href="/contacto">contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="/mi-cuenta">MiCuenta</a></li>
+      <li class="nav-item"><a class="nav-link" href="#donar">DONAR</a></li>
+      <!-- <li class="nav-item"><a class="nav-link" href="/lista-sorteos" type="button">Lista de Sorteo</a></li> -->
+    </ul>
+    <!-- <button class="btn btn-{{status}}" type="button" (click)="check()" >
+      <span *ngIf="status=='warning'" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <span *ngIf="status=='primary'"> Test server connection</span>
+      <span *ngIf="status=='warning'"> Connecting...</span>
+      <span *ngIf="status=='success'"> Connected! </span>
+   </button> -->
+  </div>
 </nav>
 

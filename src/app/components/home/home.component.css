@@ -1,0 +1,44 @@
+.carousel-inner img {
+    width: 100%;
+    height:auto;
+ }
+ 
+.carrusel {
+	height: auto;
+		
+}
+.novedades {
+	margin-top:150px;
+}
+
+.nuestroaporte {
+	margin-top:150px;
+}
+
+.nav-item {
+	content:right-side;
+}
+.quienes {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#demo {	
+    top:50px;
+
+	
+}
+#quienessomos {
+	height:500px;
+	padding-top:60px;
+	margin-top: 45px;
+	margin-bottom: 50px;
+	background-color:#0054ff85;
+}
+
+#aportes {
+	height:250px;
+}
+.img-fluid {
+	max-width: 100%;
+	 height: auto;
+} 

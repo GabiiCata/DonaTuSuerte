@@ -1,0 +1,138 @@
+<!-- <app-lista-sorteos></app-lista-sorteos> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="assets/vendors/scripts.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <!-- Brand -->
+      <a class="navbar-brand" href="/home">DonaTuSuerte</a>
+    
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">       
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#novedades">Novedades</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/contacto">contacto</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#donar">DONAR</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>NOMBRE USUARIO</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Administracion de cuenta</p>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mis puntos</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Mis donaciones</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Historial de Sorteos</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Mis Datos</a>
+                    </li>
+                    <li>
+                        <a href="#">Te podemos ayudar?</a>
+                    </li>
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                    <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span>Toggle Sidebar</span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+<div class="row">
+                <h2>SORTEOS</h2>
+                <app-lista-sorteos> </app-lista-sorteos>
+                <!-- <div class="col sorteos">
+                    <img class="img-fluid" src="assets/img/messi.png" alt="10" >
+                        <h5>ORDEN DE COMPRA $1000</h5>
+                        <h6>SORTEA 18/08/2020</h6>
+                        <h6>200 PUNTOS</h6>
+                </div> -->
+                    <!-- <div class="col sorteos">
+                        <img class="img-fluid" src="assets/img/messi.png" alt="10" >
+                            <h5>ORDEN DE COMPRA $1000</h5>
+                            <h6>SORTEA 18/08/2020</h6>
+                            <h6>200 PUNTOS</h6>
+                        </div>-->
+                    </div> 
+                    
+                    <hr class="solid">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h2>Lorem Ipsum Dolor</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h2>Lorem Ipsum Dolor</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    
+    
+    <!-- <app-lista-sorteos></app-lista-sorteos> -->
+
+
+    
+</body>
+</html>

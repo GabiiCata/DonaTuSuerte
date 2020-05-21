@@ -46,6 +46,7 @@
 	"sorteos" :[
 		{
 			"id" : 123123,
+			"numeroSorteo" : 1,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/verduras.jpg",
 			"finicio": "2020/05/06",
@@ -57,6 +58,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 2,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo1.jpg",
 			"finicio": "2020/05/06",
@@ -68,6 +70,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 3,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo2.jpg",
 			"finicio": "2020/05/06",
@@ -76,9 +79,11 @@
 			"score"  : 50000,
 			"state"  : "Activo",
 			"winner" : ""
-		},
+		}
+		,
 		{
 			"id" : 123123,
+			"numeroSorteo" : 4,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo3.jpg",
 			"finicio": "2020/05/06",
@@ -90,6 +95,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 5,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo4.jpg",
 			"finicio": "2020/05/06",
@@ -101,6 +107,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 6,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo5.jpg",
 			"finicio": "2020/05/06",
@@ -112,6 +119,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 7,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo6.jpg",
 			"finicio": "2020/05/06",
@@ -123,6 +131,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 8,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo7.png",
 			"finicio": "2020/05/06",
@@ -134,6 +143,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 9,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo8.jpg",
 			"finicio": "2020/05/06",
@@ -145,6 +155,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 10,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo9.jpg",
 			"finicio": "2020/05/06",
@@ -156,6 +167,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 11,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo10.jpg",
 			"finicio": "2020/05/06",
@@ -167,6 +179,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 12,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo11.jpg",
 			"finicio": "2020/05/06",
@@ -178,6 +191,7 @@
 		},
 		{
 			"id" : 123123,
+			"numeroSorteo" : 13,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo12.jpg",
 			"finicio": "2020/05/06",
@@ -190,6 +204,7 @@
 		,
 		{
 			"id" : 123123,
+			"numeroSorteo" : 14,
 			"premio" : "Canasta de verduras",
 			"photo"  : "assets/images/sorteo13.png",
 			"finicio": "2020/05/06",

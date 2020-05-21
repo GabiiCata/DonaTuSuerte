@@ -16,6 +16,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  scrollTo(section)
+  {
+    document.getElementById(section).scrollIntoView ( {behavior:"smooth"} );
+  }
+
   check()
   {
     console.log ( 'conectando.')
@@ -41,5 +46,8 @@ export class NavbarComponent implements OnInit {
       })
     }) 
   }
-
+  scrollTo(section)
+  {
+    document.getElementById(section).scrollIntoView ( {behavior:"smooth"} );
+  }
 }
