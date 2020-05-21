@@ -10,6 +10,7 @@ import { MiCuentaComponent } from './components/mi-cuenta/mi-cuenta.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+   { path: '', component: HomeComponent },
    { path: 'home', component: HomeComponent },
    { path: 'info', component: InfoComponent },
    { path: 'lista-sorteos', component: ListaSorteosComponent },
