@@ -90,6 +90,7 @@ export class RequestService {
     this.http.post ( this.url + '/users/signin' , body , { headers: httpHeaders} ).toPromise()
       .then ( data => 
         {
+          console.log ( data )
           let response :any = data;
           localStorage.setItem('token',response.data.token)
           localStorage.setItem('id',response.data.user._id)
