@@ -1,7 +1,7 @@
 
 body {
 	/* //background-image: url(" img/1.jpg"); */
-	background-color: #cccccc;    
+	background-color: #ffffff;    
     background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -26,7 +26,8 @@ hr.solid {
 }
 
 img {
-	height:auto;
+    height:auto;
+
 }
 input[type=text] {
   width: 130px;
@@ -34,10 +35,6 @@ input[type=text] {
   transition: width 0.4s ease-in-out;
 }
 
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-  width: 80%;
-}
 
 
 .container-fluid { 
@@ -47,17 +44,19 @@ input[type=text]:focus {
  }
 
 .row { 
-	justify-content: center;
+    justify-content: center;
+    margin-left: 0px;
  }
 
 .sorteos { 
-	background-color:white; 
+	background-color:rgb(255, 255, 255); 
 	padding:0px;
 	 margin:40px;
  }
+ /* COLOR FONDO DEL CONTENIDO */
  body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background: #dbdbdb;
 }
 
 p {
@@ -108,7 +107,7 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: rgb(30, 99, 189);
     color: #fff;
     transition: all 0.3s;
 }
@@ -119,12 +118,12 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #808080;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #478b4d;
 }
 
 #sidebar ul p {
@@ -138,13 +137,13 @@ a, a:hover, a:focus {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color:rgb(30, 99, 189);
     background: #fff;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: rgb(24, 79, 150);;
 }
 
 
@@ -168,7 +167,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #4a5aa3;
 }
 
 ul.CTAs {
@@ -189,7 +188,7 @@ a.download {
 }
 
 a.article, a.article:hover {
-    background: #6d7fcc !important;
+    background: #4054ad !important;
     color: #fff !important;
 }
 
@@ -202,12 +201,13 @@ a.article, a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    
 }
 
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
     }
@@ -217,4 +217,4 @@ a.article, a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
-}
+} */
