@@ -46,8 +46,4 @@ export class NavbarComponent implements OnInit {
       })
     }) 
   }
-  scrollTo(section)
-  {
-    document.getElementById(section).scrollIntoView ( {behavior:"smooth"} );
-  }
 }
