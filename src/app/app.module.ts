@@ -20,6 +20,7 @@ import { ListaSorteosComponent } from './components/lista-sorteos/lista-sorteos.
 import { BuscarSorteoComponent } from './components/buscar-sorteo/buscar-sorteo.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { MiCuentaComponent } from './components/mi-cuenta/mi-cuenta.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYcl80CVK0LaQF1WOqoLRSOP1RDmBFhRs",
@@ -49,6 +50,7 @@ firebase.initializeApp(firebaseConfig);
     BuscarSorteoComponent,
     ContactoComponent,
     MiCuentaComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
