@@ -151,16 +151,17 @@ a[data-toggle="collapse"] {
     position: relative;
 }
 
-a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+/* a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     content: '\e259';
     display: block;
     position: absolute;
     right: 20px;
     font-family: 'Glyphicons Halflings';
     font-size: 0.6em;
-}
+} */
 a[aria-expanded="true"]::before {
     content: '\e260';
+    
 }
 
 
@@ -168,6 +169,7 @@ ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #4a5aa3;
+
 }
 
 ul.CTAs {
@@ -208,13 +210,16 @@ a.article, a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
-    #sidebar {
+    /* #sidebar {
         margin-left: -250px;
-    }
-    #sidebar.active {
+    } */
+    /* #sidebar.active {
         margin-left: 0;
-    }
-    #sidebarCollapse span {
+    } */
+    /* #sidebarCollapse span {
         display: none;
-    }
+    } */
+}
+.navbar {
+    padding-left: 50px;
 }
