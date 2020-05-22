@@ -1,3 +1,13 @@
+/* body {
+	
+} */
+.fondo {
+	background-image: url("/assets/img/1.jpg");
+	Width: auto;
+	margin-top: 50px;
+	height: 850px;
+	background-repeat: no-repeat;
+}
 .carousel-inner img {
     width: 100%;
     height:800px;
@@ -20,18 +30,23 @@
 }
 .quienes {
     padding-top: 50px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 #demo {	
 	top:50px;
 		
 }
+
 #quienessomos {
 	height:500px;
 	padding-top:60px;
-	margin-top: 45px;
 	margin-bottom: 50px;
 	background-color:#0054ff85;
+}
+
+#quehacemos {
+	margin-top:110px ;
+	
 }
 
 #aportes {

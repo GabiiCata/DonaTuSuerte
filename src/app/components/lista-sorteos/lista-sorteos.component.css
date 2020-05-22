@@ -8,11 +8,9 @@ app-sorteo{
 .sorteos { 
 	background-color:white; 
 	margin: 25px;
-	/* margin-left: 20px; */
 	padding: 5px;
 	 
  }
  .row { 
-	/* margin: auto; */
 	justify-content: center;
  }
