@@ -51,7 +51,7 @@ input[type=text] {
 .sorteos { 
 	background-color:rgb(255, 255, 255); 
 	padding:0px;
-	 margin:40px;
+	margin:40px;
  }
  /* COLOR FONDO DEL CONTENIDO */
  body {
@@ -207,7 +207,7 @@ a.article, a.article:hover {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
     }
@@ -217,4 +217,4 @@ a.article, a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
-} */
+}
