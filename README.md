@@ -1,27 +1,53 @@
-# HackatonApp
+# Dona Tu Suerte 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+_Este Proyecto compite en ```Hackaton: GlobHack Latam 2020```_
 
-## Development server
+_Aplicación web consiste en promover donaciones a sectores desfavorecidos, motivados por sorteos en increibles premios, realizados por comercios_
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+_De esta manera buscamos triangular una serie de beneficios para la sociedad:_
+> ❤️ Ayudar a sectores desfavorecidos con una serie de donaciones.
 
-## Code scaffolding
+> 🎁 Recompensar aquellas personas que realizan donaciones, inscribiendose en increibles sorteos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> 🚀 Lograr que diversos comercios puedan despegar sus ventas, haciendose mas conocidos por sus sorteos.
 
-## Build
+## Correr aplicación de forma local ⚙️
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Esta aplicación esta linkeada al servidor de [API hackaton](https://github.com/ekrenz-developer/API-AutoEcoPlant)
 
-## Running unit tests
+### Pre-requisitos 📋
+#### Tener instalado previamente:  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* [GIT](https://git-scm.com/downloads)
+* [NPM](https://nodejs.org/es/download/)
 
-## Running end-to-end tests
+### Pasos para correr la app
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+_Descarga el proyecto_
+  ```
+git clone https://github.com/GabiiCata/DonaTuSuerte.git
+  ```
 
-## Further help
+_Posicionate dentro de la carpeta_
+  ```
+  cd DonaTuSuerte
+  ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+_Instala las librerías correspondientes_
+  ``` 
+  npm install
+  ```
+
+_Instalar el cliente de Angular_
+  ```
+  npm install -g @angular/cli
+  ```
+_Iniciar la aplicación_
+  ```
+  ng serve
+  ```
+
+  _En tu navegador_
+  ```
+  http://localhost:4200/
+  ```
