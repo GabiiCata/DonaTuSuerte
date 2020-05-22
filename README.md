@@ -1,8 +1,8 @@
 # Dona Tu Suerte 
 
-_Este Proyecto compite en ```Hackaton: GlobHack Latam 2020```_
+_Este Proyecto en conjunto con nuestro  [Servidor](https://github.com/ekrenz-developer/API-AutoEcoPlant) compite en  Hackaton: [GlobHack Latam 2020](https://www.belatrixsf.com/globhack/)_ 
 
-_Aplicación web consiste en promover donaciones a sectores desfavorecidos, motivados por sorteos en increibles premios, realizados por comercios_
+_Aplicación web que consiste en promover donaciones a sectores desfavorecidos, motivados por sorteos en increibles premios, realizados por comercios_
 
 _De esta manera buscamos triangular una serie de beneficios para la sociedad:_
 > ❤️ Ayudar a sectores desfavorecidos con una serie de donaciones.
