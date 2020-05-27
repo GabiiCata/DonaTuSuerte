@@ -3,7 +3,7 @@
   <source src="assets/video/video1.mp4" type="video/mp4" >
 </video>
 
-<div class="container">
+<div class="container rounded">
  
       <img class="userlogin" src="assets/images/userlogin.png" alt=""><br> <br>
       <div class="card">
@@ -14,7 +14,7 @@
         <input  id="pass" class="form-control"   [(ngModel)]="user.password" type="password"> <br><br>
         <button class="btn btn-info" (click)="simpleLogin()"> Iniciar Sesion </button> <br>
         <label for="">¿No tienes cuenta?</label>
-        <button class="btn btn-secondary" (click)="simpleLogin()"> Registrarme </button>
+        <a class="btn btn-secondary" href="/signUp"> Registrarme </a>
       </div>
       <hr>
       <div class="btn btn-light">

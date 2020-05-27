@@ -35,7 +35,12 @@ export class SignupComponent implements OnInit {
     "score": "",
   }
 
+  roleSelected = false;
 
+  selectRole()
+  {
+    this.roleSelected = true
+  }
   
 
 

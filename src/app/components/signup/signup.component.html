@@ -2,6 +2,16 @@
   <source src="assets/video/video1.mp4" type="video/mp4" >
 </video>
 
+<div *ngIf="!roleSelected" class="  container" style="width: 50rem;">
+   
+    <li class="alert alert-primary btn btn-primary " (click)="selectRole()" > Donador </li>
+    <li class="alert alert-info  btn btn-info" (click)="selectRole()" > Comercio </li>
+    <li class="alert alert-success  btn btn-success " (click)="selectRole()" > Validador </li>
+ 
+</div>
+
+
+<div  *ngIf="roleSelected" class="container">
 <div class="row">
   <div class="col">
       
@@ -68,4 +78,5 @@
         <input [(ngModel)]="user.dateOfBirth" type="text" class="form-control"  placeholder="Url de foto">
       </div>
       <button class="btn btn-primary" (click)="signIn()">Registrarse</button>
-  </div>
+      <button class="btn btn-info" (click)="roleSelected=false">Cambiar Usuario</button>
+  </div></div>
