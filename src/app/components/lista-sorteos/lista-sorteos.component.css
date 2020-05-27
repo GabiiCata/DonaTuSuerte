@@ -11,3 +11,6 @@ app-sorteo{
 	padding: 5px;
 	 
  }
+ .row { 
+	justify-content: center;
+ }
