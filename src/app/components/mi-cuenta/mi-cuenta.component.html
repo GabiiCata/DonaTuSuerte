@@ -36,12 +36,14 @@
     
         <div class="wrapper">
             <!-- Sidebar Holder -->
-            <nav id="sidebar" class="Administrator">
+            <nav id="sidebar" class="{{user.role.description}}">
                 <div class="sidebar-header">
-                    <h3>{{user.firstName}} {{user.lastName}}</h3>                    
-                    <div>
-                          <img class="card-img-top rounded-circle" src="{{user.photo}}" alt="Card image">
-                    </div><br>
+                                      
+                    <div style="text-align: center;">
+                          <img class="card-img-top rounded-circle" src="{{user.photo}}" alt="Card image"><hr>
+                          <h5>{{user.firstName}} {{user.lastName}}</h5>  
+                    </div>
+                    
                 </div>
 
                 <ul class="list-unstyled components">

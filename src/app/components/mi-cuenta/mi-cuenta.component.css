@@ -26,7 +26,8 @@ hr.solid {
 }
 
 img {
-    height:auto;
+    width: 100px;
+    height: 100px;
 
 }
 input[type=text] {
@@ -110,13 +111,13 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
-.Administrator {
-    background: rgb(30, 99, 189);
+.Organizacion {
+    background: rgb(6, 41, 87);
     color: #fff;
 }
 
-.User { 
-    background: rgb(189, 125, 30);
+.Participante { 
+    background: rgb(60, 105, 226);
     color: #fff;
 }
 

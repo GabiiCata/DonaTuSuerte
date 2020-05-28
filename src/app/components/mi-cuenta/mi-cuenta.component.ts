@@ -14,7 +14,13 @@ export class MiCuentaComponent implements OnInit {
 
   constructor( private request : RequestService , private router : Router)
   {
-       this.user = JSON.parse( localStorage.getItem ( 'user' ) ); 
+    this.user = JSON.parse( localStorage.getItem ( 'user' ) ); 
+    request.getRolesDesc ( ).then ( roles => {
+      
+      this.user.role.description = roles[this.user.role._id]
+      console.log (this.user.role.description )
+    })
+       
        console.log ( this.user.lastName );
   }
 
