@@ -36,7 +36,7 @@
     
         <div class="wrapper">
             <!-- Sidebar Holder -->
-            <nav id="sidebar">
+            <nav id="sidebar" class="Administrator">
                 <div class="sidebar-header">
                     <h3>{{user.firstName}} {{user.lastName}}</h3>                    
                     <div>
@@ -45,7 +45,7 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p>Administracion de cuenta</p>
+                    <p>{{user.role.description}}</p>
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mis puntos</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -63,8 +63,13 @@
                     <li>
                         <a href="#">Te podemos ayudar?</a>
                     </li>
+                    
                 </ul>
-
+                <ul class="list-unstyled components">
+                     <li>
+                        <a class="btn btn-danger" (click)="closeSesion()">Cerrar Sesion</a>
+                     </li>
+                </ul>
 
             </nav>
 

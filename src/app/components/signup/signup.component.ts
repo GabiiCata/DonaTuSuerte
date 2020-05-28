@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
 import * as firebase from 'firebase';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -9,9 +10,24 @@ import * as firebase from 'firebase';
 export class SignupComponent implements OnInit {
 
   provider = undefined;
+  showRoles = false;
+  showSignUpForm = false;
+  roles = [];
 
   constructor( private request : RequestService ) { 
     this.provider = new firebase.auth.GoogleAuthProvider();
+
+    request.getRoles().then ( data => {
+       let response : any = data;
+      this.roles = response.data;
+      request.getRolesDesc ( ).then ( data => 
+        {
+        this.roles.forEach ( role => {
+          role.description = data[role._id]
+        })
+      })
+      this.showRoles = true;
+    })
   }
 
   formData = new FormData();
@@ -19,27 +35,33 @@ export class SignupComponent implements OnInit {
   user = {
     "email": "",
     "password": "",
-    "photo": null,
+    "photo": "",
     "firstName": "",
     "lastName": "",
-    "country": "",
     "dateOfBirth": "",
+    "country": "",
     "address": {
       "street": "",
       "city": "",
       "state": "",
-      "zip": "",
+      "postalCode": "",
+      "country": "",
+      "lat": "",
+      "lon": ""
     },
     "phone": "",
-    "conditions": "",
-    "score": "",
+    "conditions": false,
+    "score": 0,
+    "role": ""
   }
 
-  roleSelected = false;
+  
 
-  selectRole()
+  selectRole( roleSelected )
   {
-    this.roleSelected = true
+    this.user.role = roleSelected;
+    this.showSignUpForm = true;
+    this.showRoles = false;
   }
   
 
@@ -47,12 +69,13 @@ export class SignupComponent implements OnInit {
 
   addInFormData ( key , event )
   {
-    if ( event.target.value == 'on')
-      this.formData.set ( key , "true" );
-    else
-      this.formData.set ( key , event.target.value );
+    // console.log ( key + " " + event)
+    // if ( event.target.value == 'on')
+    //   this.formData.set ( key , "true" );
+    // else
+    //   this.formData.set ( key , event.target.value );
 
-    console.log ( this.formData.get ( key ))
+    // console.log ( this.formData.get ( key ))
   }
 
   
@@ -64,10 +87,10 @@ export class SignupComponent implements OnInit {
     this.formData.append ( 'photo' , event.target.files[0] )
   }
 
-  signIn()
+  signUp()
   {
     Object.keys( this.user ).forEach((key)=>{ this.formData.append( key,this.user[key] )});
-    console.log ( this.formData )
+    Object.keys( this.user ).forEach((key)=>{ console.log ( key + ": " + this.formData.get( key ) ) });
     this.request.signIn( this.formData );
   }
 
@@ -103,6 +126,11 @@ export class SignupComponent implements OnInit {
     });
   }
 
+
+  changeUser(){
+    this.showRoles = true;
+    this.showSignUpForm = false;
+  }
   
 
   ngOnInit() {

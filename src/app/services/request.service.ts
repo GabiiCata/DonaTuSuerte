@@ -10,18 +10,11 @@ import {   Router  } from '@angular/router';
 export class RequestService {
 
   private config;
-  private url;
+  private url = "https://dona-tu-suerte-test.herokuapp.com/api/v1";
  
   constructor(private http: HttpClient, private router : Router) 
-  {
-     this.getConfig().then ( data => { return   this.configEnviroment ( data ["prod"] )    }); 
-  }
+  {   }
 
-  private configEnviroment ( data )
-  {
-    this.url = data.url;
-    console.log ( this.url );
-  }
   
   private getHeaders()
   {
@@ -59,17 +52,35 @@ export class RequestService {
 
   signIn( body )
   {
-    let uri = "/users/register";
+    let uri = "/users/sign-up";
 
 
     this.http.post ( this.url + uri , body ).toPromise()
       .then( data => 
         {
-          console.log ( data ) ;
-          this.currentUser = data;
-          this.login (this.currentUser.email , this.currentUser.password)
+          let response:any = data;
 
-      }) 
+          console.log ( response ) ;
+          this.currentUser = response;
+          Swal.fire({
+            icon: 'success',
+            title: 'Registro Correcto como: ' + response.data.firstName + " " + response.data.lastName,
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+          this.router.navigate ( ['/signIn']  );
+
+      })
+      .catch ( err => {
+        console.log ( err )
+        Swal.fire({
+          icon: 'error',
+          title: err.error.message,
+          showConfirmButton: false,
+          timer: 5000
+        })
+      })
 
 
 
@@ -86,9 +97,9 @@ export class RequestService {
       'Content-Type' : 'application/json'
     });
 
-    console.log ( this.url + '/users/signin' + "> " + body)
+    console.log ( this.url + '/users/sign-in' + "> " + body)
 
-    this.http.post ( this.url + '/users/signin' , body , { headers: httpHeaders} ).toPromise()
+    this.http.post ( this.url + '/users/sign-in' , body , { headers: httpHeaders} ).toPromise()
       .then ( data => 
         {
           
@@ -100,7 +111,7 @@ export class RequestService {
           
           Swal.fire({
             icon: 'success',
-            title: 'Inicio correctamente como: ' + response.data.user.firstName + " " + response.data.user.lastName,
+            title: 'Inicio correctamente como: ' + response.data.firstName + " " + response.data.lastName,
             showConfirmButton: false,
             timer: 1500
           })
@@ -121,8 +132,25 @@ export class RequestService {
     return this.http.get("./assets/mock/requests.json").toPromise().then ( data => { return data; })
   }
 
+  getRolesDesc ()
+  {
+    return this.http.get("./assets/properties/roles.json").toPromise().then ( data => { return data; })
+  }
+
   private getConfig(){
     return this.http.get("./assets/properties/config.json").toPromise().then ( data => { return data; })
+  }
+
+  private get ( url )
+  {
+    return this.http.get( url ).toPromise().then ( data => { return data; })
+  } 
+
+  getRoles()
+  {
+    let uri = '/roles';
+    console.log ( this.url )
+    return this.get ( this.url +  uri ).then( data => { return data} )
   }
   
 
