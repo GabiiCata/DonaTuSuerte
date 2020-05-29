@@ -1,0 +1,12 @@
+a{
+    cursor: pointer;
+}
+
+button{
+    width: 212px;
+}
+
+#formNewStore{
+    background-color: white;
+    padding: 2%;
+}

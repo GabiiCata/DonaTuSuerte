@@ -100,61 +100,14 @@ a, a:hover, a:focus {
     SIDEBAR Estilo
 ----------------------------------------------------- */
 .wrapper {
-    display: flex;
+    /* display: flex; */
 	align-items: stretch;
 	margin-top: 70px;
 }
 
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    transition: all 0.3s;
+.mi-cuenta-content{
+    margin-left: 250px;
 }
-
-.Organizacion {
-    background: rgb(6, 41, 87);
-    color: #fff;
-}
-
-.Participante { 
-    background: rgb(60, 105, 226);
-    color: #fff;
-}
-
-#sidebar.active {
-    margin-left: -250px;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #808080;
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #478b4d;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-#sidebar ul li a:hover {
-    color:rgb(30, 99, 189);
-    background: #fff;
-}
-
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: rgb(24, 79, 150);;
-}
-
 
 a[data-toggle="collapse"] {
     position: relative;

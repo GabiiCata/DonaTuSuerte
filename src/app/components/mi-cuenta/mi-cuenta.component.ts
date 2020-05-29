@@ -15,6 +15,9 @@ export class MiCuentaComponent implements OnInit {
   constructor( private request : RequestService , private router : Router)
   {
     this.user = JSON.parse( localStorage.getItem ( 'user' ) ); 
+
+    this.updateComponent()
+    
     request.getRolesDesc ( ).then ( roles => {
       
       this.user.role.description = roles[this.user.role._id]
@@ -24,32 +27,15 @@ export class MiCuentaComponent implements OnInit {
        console.log ( this.user.lastName );
   }
 
-  ngOnInit() {
-  }
 
-  closeSesion(){
-    
-    Swal.fire({
-      title: '¿Esta seguro?',
-      text: "Esta por cerrar su sesion actual",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      cancelButtonText : 'Cancelar', 
-      confirmButtonText: 'Cerrar Sesion'
-    }).then((result) => {
-      if (result.value) {
-        localStorage.clear()
-        Swal.fire(
-          'Sesion finalizada',
-          'Que tenga buen día',
-          'success'
-        )
-        this.router.navigate ( ['/signIn']  );
-      }
+  updateComponent(){
+    this.request.getUser().then(data => {
+      let response:any = data;
+      this.user = response.data;
+
     })
-    
+  }
+  ngOnInit() {
   }
 
 }

@@ -16,30 +16,30 @@
     <div class="form-row">
       <div class="form-group col-md-3">
         <label for="inputEmail4">Email</label>
-        <input [(ngModel)]="user.email" type="email" class="form-control"  (change)="addInFormData('email' , $event)">
+        <input [(ngModel)]="user.email" type="email" class="form-control" >
       </div>
       <div class="form-group col-md-3">
         <label for="inputPassword4">Password</label>
-        <input [(ngModel)]="user.password" type="password" class="form-control" (change)="addInFormData('password' , $event)">
+        <input [(ngModel)]="user.password" type="password" class="form-control">
       </div>
     </div>
       
       <div class="form-row">
         <div class="form-group col-md-3">
           <label for="inputEmail4">Nombre</label>
-          <input [(ngModel)]="user.firstName" name="first" class="form-control"  (change)="addInFormData('firstname' , $event)">
+          <input [(ngModel)]="user.firstName" name="first" class="form-control" >
         </div>
         <div class="form-group col-md-3">
           <label for="inputPassword4">Apellido</label>
-          <input [(ngModel)]="user.lastName" type="text" class="form-control" (change)="addInFormData('lastName' , $event)" >
+          <input [(ngModel)]="user.lastName" type="text" class="form-control"" >
         </div>
         <div class="form-group col-md-2">
           <label for="inputAddress">Telefono</label>
-          <input [(ngModel)]="user.phone" type="text" class="form-control" (change)="addInFormData('phone' , $event)">
+          <input [(ngModel)]="user.phone" type="text" class="form-control">
         </div>
         <div class="form-group col-md-2">
           <label for="inputAddress">Fecha nacimiento</label>
-          <input [(ngModel)]="user.dateOfBirth" type="date" class="form-control"  (change)="addInFormData('dateOfBirth' , $event)">
+          <input [(ngModel)]="user.dateOfBirth" type="date" class="form-control" >
         </div>
       </div>
 
@@ -48,23 +48,23 @@
       <div class="form-row">
         <div class="form-group col-md-2">
           <label for="inputEmail4">Direccion</label>
-          <input [(ngModel)]="user.address.street" type="address" class="form-control" (change)="addInFormData('firstname' , $event)">
+          <input [(ngModel)]="user.address.street" type="address" class="form-control">
         </div>
         <div class="form-group col-md-2">
           <label for="inputPassword4">Localidad</label>
-          <input [(ngModel)]="user.address.city" type="city" class="form-control" (change)="addInFormData('firstname' , $event)">
+          <input [(ngModel)]="user.address.city" type="city" class="form-control">
         </div>
         <div class="form-group col-md-2">
           <label for="inputPassword4">Estado/Pais</label>
-          <input [(ngModel)]="user.address.state" type="contry" class="form-control" (change)="addInFormData('firstname' , $event)">
+          <input [(ngModel)]="user.address.state" type="contry" class="form-control">
         </div>
         <div class="form-group col-md-2">
           <label for="inputPassword4">Codigo Postal</label>
-          <input [(ngModel)]="user.address.zip" type="password" class="form-control" (change)="addInFormData('firstname' , $event)">
+          <input [(ngModel)]="user.address.zip" type="password" class="form-control">
         </div>
         <div class="form-group col-md-2">
           <label for="inputAddress">Pais</label>
-          <input [(ngModel)]="user.country" type="text" class="form-control" (change)="addInFormData('firstname' , $event)">
+          <input [(ngModel)]="user.country" type="text" class="form-control">
         </div>
         
       </div>
@@ -78,7 +78,7 @@
 
       <div class="form-group col-md-2">
         <label for="inputAddress">Condiciones</label>
-        <input [(ngModel)]="user.conditions" type="Checkbox" class="form-control"  (change)="addInFormData('conditions' , $event)">
+        <input [(ngModel)]="user.conditions" type="Checkbox" class="form-control" >
       </div>
 
       

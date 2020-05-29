@@ -21,6 +21,8 @@ import { BuscarSorteoComponent } from './components/buscar-sorteo/buscar-sorteo.
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { MiCuentaComponent } from './components/mi-cuenta/mi-cuenta.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SidebarComponent } from './components/mi-cuenta/sidebar/sidebar.component';
+import { OrganizacionesComponent } from './components/mi-cuenta/organizaciones/organizaciones.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYcl80CVK0LaQF1WOqoLRSOP1RDmBFhRs",
@@ -51,6 +53,8 @@ firebase.initializeApp(firebaseConfig);
     ContactoComponent,
     MiCuentaComponent,
     SignupComponent,
+    SidebarComponent,
+    OrganizacionesComponent,
   ],
   imports: [
     BrowserModule,

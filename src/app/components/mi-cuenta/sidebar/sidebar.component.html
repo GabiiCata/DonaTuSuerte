@@ -1,0 +1,32 @@
+<nav id="sidebar" class="{{user.role.description}}">
+  <div class="sidebar-header">
+                        
+      <div style="text-align: center;">
+            <img class="card-img-top rounded-circle" src="{{user.photo}}" alt="Card image"><hr>
+            <h5>{{user.firstName}} {{user.lastName}}</h5>  
+      </div>
+      
+  </div>
+
+  <ul class="list-unstyled components">
+      <p>{{user.role.description}}</p>
+
+      <li>
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio</a>
+          <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-profile" aria-selected="false">Mis sorteos</a>
+          <a class="nav-link" id="v-pills-organizations-tab" data-toggle="pill" href="#v-pills-organizations" role="tab" aria-controls="v-pills-profile" aria-selected="false">Mis Organizaciones</a>
+          <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Historial de Sorteos</a>
+          <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Perfil</a>
+          <a class="nav-link" id="v-pills-contact-tab" data-toggle="pill" href="#v-pills-contact" role="tab" aria-controls="v-pills-contact" aria-selected="false">Te podemos ayudar?</a>
+
+        </div>
+      </li>
+  </ul>
+  <ul class="list-unstyled components">
+       <li>
+          <a class="btn btn-danger" (click)="closeSesion()">Cerrar Sesion</a>
+       </li>
+  </ul>
+
+</nav>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import {   Router  } from '@angular/router';
+import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Injectable({
   providedIn: 'root'
@@ -27,15 +28,28 @@ export class RequestService {
 
   getUser ()
   {
-    let uri = '/users/' + localStorage.getItem('id' );
+    let uri = '/users'
+    let httpHeaders = this.getHeaders();
+
+    return this.get( uri , httpHeaders).then ( data => { 
+      let response:any = data;
+      localStorage.setItem('user', JSON.stringify( response.data ));
+      return response; 
+    }) 
+  }
+
+  getOrganization ( orgId ){
+    let uri = '/organizations/' + orgId ; 
 
     let httpHeaders = this.getHeaders();
 
-    return this.post ( httpHeaders , null, uri)
-    .then(data => { return data } ) 
+    return this.get( uri , httpHeaders).then ( data => { 
+      let response:any = data;
+      return response.data; 
+    }) 
   }
 
-  
+
 
   testRequest(){
     console.log ( "test-connection: loading..." )
@@ -43,10 +57,13 @@ export class RequestService {
   }
 
   post (header ,  body , uri ){
-    return this.http.get ( this.url + uri ,  { headers: header}  ).toPromise()
+    return this.http.post ( this.url + uri , body,  { headers: header}  ).toPromise()
       .then( data => {
-        console.log ( data ) ;
+        console.log ( data );
         return data;
+      })
+      .catch ( err => {
+        console.error ( err );
       }) 
   }
 
@@ -141,17 +158,37 @@ export class RequestService {
     return this.http.get("./assets/properties/config.json").toPromise().then ( data => { return data; })
   }
 
-  private get ( url )
+  private get ( uri ,  header )
   {
-    return this.http.get( url ).toPromise().then ( data => { return data; })
+    let url = this.url + uri;
+
+    return this.http.get( url ,  {headers : header} ).toPromise().then ( data => { return data; })
   } 
 
   getRoles()
   {
     let uri = '/roles';
     console.log ( this.url )
-    return this.get ( this.url +  uri ).then( data => { return data} )
+    return this.get ( this.url +  uri , null).then( data => { return data} )
+  }
+
+  createOrganization( body ) 
+  {
+
+    let headers = new HttpHeaders({
+      'Authorization' :  'Bearer ' + localStorage.getItem('token')
+    });
+    console.log ( headers.get('Authorization') )
+
+    return this.post ( headers , body , '/organizations' ).then ( data => { return data })
   }
   
+
+  addStore( body , orgId )
+  {
+    let uri = "/organizations/" + orgId  + "/stores" ; 
+    console.log ( uri )
+     return this.post ( this.getHeaders() , body , uri ).then ( data => { return data })
+  }
 
 }

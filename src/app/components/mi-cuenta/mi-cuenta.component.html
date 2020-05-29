@@ -2,116 +2,79 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="assets/vendors/scripts.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="assets/vendors/scripts.js"></script>
 
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-      <!-- Brand -->
-      <a class="navbar-brand" href="/home">DonaTuSuerte</a>
-    
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">       
-            <li class="nav-item"><a class="nav-link" href="#novedades">Novedades</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contacto">contacto</a></li>
-            <li class="nav-item"><a class="btn btn-primary nav-link" href="#donar">DONAR</a></li>
-        </ul>
-      </div>
+        <!-- Brand -->
+        <a class="navbar-brand" href="/home">DonaTuSuerte</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <li class="nav-item"><a class="nav-link" href="#novedades">Novedades</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contacto">contacto</a></li>
+                <li class="nav-item"><a class="btn btn-primary nav-link" href="#donar">DONAR</a></li>
+            </ul>
+        </div>
     </nav>
-    
-    
-        <div class="wrapper">
-            <!-- Sidebar Holder -->
-            <nav id="sidebar" class="{{user.role.description}}">
-                <div class="sidebar-header">
-                                      
-                    <div style="text-align: center;">
-                          <img class="card-img-top rounded-circle" src="{{user.photo}}" alt="Card image"><hr>
-                          <h5>{{user.firstName}} {{user.lastName}}</h5>  
-                    </div>
-                    
+
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <app-sidebar></app-sidebar>
+
+        <!-- Page Content Holder -->
+        <div id="content" class="mi-cuenta-content">
+
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    aria-labelledby="v-pills-home-tab">
+                    <app-organizaciones></app-organizaciones>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <app-profile></app-profile>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    PANTALLA 3
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    T4
+                </div>
+                <div class="tab-pane fade" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">
+                    <app-contacto></app-contacto>
                 </div>
 
-                <ul class="list-unstyled components">
-                    <p>{{user.role.description}}</p>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mis puntos</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Mis donaciones</a>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Historial de Sorteos</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Mis Datos</a>
-                    </li>
-                    <li>
-                        <a href="#">Te podemos ayudar?</a>
-                    </li>
-                    
-                </ul>
-                <ul class="list-unstyled components">
-                     <li>
-                        <a class="btn btn-danger" (click)="closeSesion()">Cerrar Sesion</a>
-                     </li>
-                </ul>
+                <div class="tab-pane fade" id="v-pills-organizations" role="tabpanel" aria-labelledby="v-pills-organizations-tab">
+                    <app-organizaciones></app-organizaciones>
+                </div>
 
-            </nav>
-
-            <!-- Page Content Holder -->
-            <div id="content">
-
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-
-                        <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Toggle Sidebar</span>
-                            </button>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            <div class="row">
-                <h2>SORTEOS</h2>
-                <app-lista-sorteos> </app-lista-sorteos>
-
-                        </div> 
-                    
-                    <hr class="solid">    
             </div>
+
+            <hr class="solid">
+
         </div>
-    
-    
-    <!-- <app-lista-sorteos></app-lista-sorteos> -->
+    </div>
 
 
-    
+
+
+
 </body>
+
 </html>

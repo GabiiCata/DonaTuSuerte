@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile',
@@ -12,25 +13,29 @@ export class ProfileComponent implements OnInit {
 
   constructor( private request : RequestService )
   {
-    request.getUser().then ( data => { this.user = data })
+    this.user = JSON.parse( localStorage.getItem ( 'user' ) ); 
+    console.log ( this.user );
+  }
+
+  organization = 
+  {
+    "cuit"  : Number,
+    "name"  : ""
   }
 
   ngOnInit() {
   }
 
-  puser = 
+
+  registerOrganization()
   {
-    "_id": "5ebb8386cfe6f900171930f6",
-    "email": "pipigato@gmail.com",
-    "password": "$2b$10$w57tvPa8gQDtK.wVd70vLeNZl6jVSbAl33rOpBHfnSoFEB2ctJb/G",
-    "photo": "https://hackaton-leaf.herokuapp.com:45384/uploads/",
-    "firstName": "PIPI",
-    "lastName": "GATO",
-    "country": "Argentina",
-    "dateOfBirth": "1994-02-12T00:00:00.000Z",
-    "phone": "47779952",
-    "conditions": true,
-    "score": 80000
-}
+    console.warn ( "request : create organization")
+    this.request.createOrganization( this.organization ).then ( data => {
+      let response: any = data;
+      localStorage.setItem ('organization' , JSON.stringify ( response.data ) );
+      console.log ( response.data )
+      Swal.fire ( 'Organizacion registrada' , 'Ahora puedes crear sucursales y sorteos' , "success")
+    } ) ;
+  }
 
 }
