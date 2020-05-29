@@ -67,6 +67,31 @@ export class RequestService {
       }) 
   }
 
+  put ( uri , body , headers )
+  {
+    return this.http.put ( this.url + uri , body,  { headers: headers}  ).toPromise()
+      .then( data => {
+        console.log ( data );
+        return data;
+      })
+      .catch ( err => {
+        console.error ( err );
+      }) 
+  }
+
+  delete ( uri , headers )
+  {
+    return this.http.delete ( this.url + uri ,  { headers: headers}  ).toPromise()
+    .then( data => {
+      console.log ( data );
+      return data;
+    })
+    .catch ( err => {
+      console.error ( err );
+    }) 
+  }
+
+
   signIn( body )
   {
     let uri = "/users/sign-up";
@@ -191,4 +216,48 @@ export class RequestService {
      return this.post ( this.getHeaders() , body , uri ).then ( data => { return data })
   }
 
+  updateOrganization( organization )
+  {
+    let uri = '/organizations/' + organization._id;
+
+    let body =  {
+      "cuit": organization.cuit ,
+      "name": organization.name
+    } 
+
+    return this.put ( uri , body , this.getHeaders() )
+  }
+
+  deleteOrganization ( orgId )
+  {
+    let uri = '/organizations/' + orgId;
+
+    return this.delete ( uri , this.getHeaders() ).then ( data => {return data })
+  }
+
+  updateStore ( store )
+  {
+    let uri = '/stores/' + store._id;
+    let body =  {
+      "name": store.name,
+      "address": {
+        "street": store.address.street,
+        "city": store.address.city,
+        "state": store.address.state,
+        "postalCode": store.address.postalCode,
+        "country": store.address.country,
+        "lat": store.address.lat,
+        "lon": store.address.lon
+      }
+    }
+
+    return this.put ( uri , body , this.getHeaders() )
+  }
+
+  deleteStore( storeId , orgId )
+  {
+    let uri = '/organizations/'+ orgId +'/stores/' + storeId;
+
+    return this.delete ( uri , this.getHeaders() ).then ( data => {return data })
+  }
 }

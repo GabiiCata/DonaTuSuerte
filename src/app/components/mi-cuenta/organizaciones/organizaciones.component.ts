@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-organizaciones',
@@ -14,7 +17,7 @@ export class OrganizacionesComponent implements OnInit {
   showStores = false;
   showOrganizations = true;
 
-  constructor( private request : RequestService) { 
+  constructor( private request : RequestService , private router : Router) { 
     this.user = JSON.parse( localStorage.getItem ( 'user' ) ); 
   }
 
@@ -73,7 +76,7 @@ export class OrganizacionesComponent implements OnInit {
     this.request.addStore ( this.store , this.organizationSelected._id )
     .then ( data => {
       Swal.fire('Sucursal creada', 'Ahora puedes crear sorteos para dicha sucursal' , 'success')
-      window.location.reload();
+      
 
     })
     this.showNewStoreForm = false;
@@ -82,9 +85,99 @@ export class OrganizacionesComponent implements OnInit {
 
   showDraws = false;
 
-  loadDraws () 
+  storeSelected : any; 
+
+  loadDraws ( id ) 
   {
-    console.warn ( 'TODO: loadDraws')
+      this.organizationSelected.stores.forEach( store  => {
+        if ( store._id == id )
+        {
+          this.storeSelected = store;
+        }
+      });
+
+      this.showDraws = true;
+      this.showStores = false;
+  }
+
+
+  updateOrganization(){
+    this.request.updateOrganization( this.organizationSelected )
+    .then ( data => {
+       
+      Swal.fire({
+        icon: 'success',
+        title: 'Organización Actualiazada con éxito',
+        showConfirmButton: false,
+        timer: 3000
+      })
+    });
+  }
+
+  deleteOrganization()
+  {
+    Swal.fire({
+      title: '¿Seguro que quiere proceder?',
+      text: "Se eliminará las sucursales y todos los sorteos incluidos",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+
+        this.request.deleteOrganization ( this.organizationSelected._id )
+        .then ( data => {
+          Swal.fire(
+            'Organizacion eliminada con éxito',
+            'Se reflejará en tu lista de organizaciones',
+            'success'
+          )
+        })
+        
+      }
+    })
+  }
+
+  updateStore()
+  {
+    this.request.updateStore( this.storeSelected )
+    .then ( data => {
+       
+      Swal.fire({
+        icon: 'success',
+        title: 'Sucursal Actualiazada con éxito',
+        showConfirmButton: false,
+        timer: 3000
+      })
+    });
+  }
+
+  deleteStore ()
+  {
+    Swal.fire({
+      title: '¿Seguro que quiere proceder?',
+      text: "Se eliminarán todos los sorteos",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+
+        this.request.deleteStore ( this.storeSelected._id , this.organizationSelected._id )
+        .then ( data => {
+          Swal.fire(
+            'Sucursal eliminada con éxito',
+            'Se reflejará en tu lista de sucursales',
+            'success'
+          )
+        })
+        
+      }
+    })
   }
 
 }

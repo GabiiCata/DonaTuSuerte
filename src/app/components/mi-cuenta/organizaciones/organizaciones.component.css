@@ -6,7 +6,7 @@ button{
     width: 212px;
 }
 
-#formNewStore{
+#formNewStore #collapseCreateDraw{
     background-color: white;
     padding: 2%;
 }

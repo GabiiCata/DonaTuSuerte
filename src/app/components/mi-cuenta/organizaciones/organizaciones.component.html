@@ -3,6 +3,7 @@
 
   <div *ngIf="showOrganizations">
     <h3>Organizaciones</h3>
+    <hr>
     <a *ngFor="let organization of user.organizations"
       class="list-group-item list-group-item-action flex-column align-items-start"
       (click)="loadStores(organization._id)">
@@ -15,29 +16,52 @@
   </div>
 </div>
 
-<hr>
-<hr>
+
 
 <div *ngIf="showStores" id="stores" class="list-group">
-  <h3>Sucursales de : {{organizationSelected.name}}</h3>
+  <h2>Organizacion {{organizationSelected.name}}</h2>
+  <h6>Cuit {{organizationSelected.cuit}}</h6>
+  <br>
+
+
+  <h3>Sucursales</h3>
   <ul class="list-group" *ngFor="let store of organizationSelected.stores">
-    <a (click)="loadDraws()" class="btn list-group-item d-flex justify-content-between align-items-center ">
+    <a (click)="loadDraws( store._id )" class="btn list-group-item d-flex justify-content-between align-items-center ">
       {{store.name}}
       <span class="badge badge-primary badge-pill">Sorteos activos : {{store.draws.length}}</span>
     </a>
   </ul>
   <hr>
 
-  <div *ngIf="showDraws">
-  <app-lista-sorteos></app-lista-sorteos>
-</div>
-
-  <button class="btn btn-info" (click)="goBackOrganizations()">Volver a organizaciones</button>
-  <hr>
-  <button class="btn btn-success" (click)="newStore()">Crear sucursal</button>
 
 
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-warning" data-toggle="collapse" href="#collapseExample"
+      aria-controls="collapseExample"> / Editar Organizacion</button>
+    <button type="button" class="btn btn-danger" (click)="deleteOrganization()"> X Eliminar Organizacion</button>
+    <button type="button" class="btn btn-primary" (click)="newStore()">+ Crear sucursal</button>
+    <button type="button" class="btn btn-info" (click)="goBackOrganizations()">
+      << Volver</button>
+  </div>
 
+
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">CUIT</label>
+        <input [(ngModel)]="organizationSelected.cuit" type="number" class="form-control" id="exampleInputEmail1"
+          aria-describedby="emailHelp" required="true">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Nombre de Organizacion</label>
+        <input [(ngModel)]="organizationSelected.name" type="text" class="form-control" id="exampleInputPassword1"
+          required="true">
+      </div>
+      <button class="btn btn-warning" type="submit" (click)="updateOrganization()">Editar</button>
+
+    </div>
+  </div>
 
   <br>
   <hr>
@@ -66,4 +90,107 @@
 
     <button type="submit" class="btn btn-primary" (click)="createNewStore(organizationSelected._id)">+ Agregar</button>
   </div>
+</div>
+
+
+
+<div *ngIf="showDraws" id="stores" class="list-group">
+  <h2>Sucursal:  {{storeSelected.name}}</h2>
+  <strong> Organizacion : {{organizationSelected.name}}</strong><hr>
+  <h6>Direccion: {{storeSelected.address.street}}</h6>
+  <h6>Codigo Postal: {{storeSelected.address.postalCode}}</h6>
+  <h6>Ciudad: {{storeSelected.address.city}}</h6>
+  <h6>Localidad: {{storeSelected.address.state}}</h6>
+  <h6>Pais: {{storeSelected.address.country}}</h6>
+
+  <br>
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-warning" data-toggle="collapse" href="#collapseUpdateStore"
+      aria-controls="collapseUpdateStore"> / Editar Sucursal</button>
+    <button type="button" class="btn btn-danger" (click)="deleteStore()"> X Eliminar Sucursal</button>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" href="#collapseCreateDraw"
+      aria-controls="collapseCreateDraw" (click)="addDraw() "> + Crear Sorteo </button>
+    <button type="button" class="btn btn-info" (click)="goBackStores()">
+      << Volver</button>
+  </div>
+
+  <div class="collapse" id="collapseUpdateStore">
+    <div class="card card-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nombre</label>
+        <input [(ngModel)]="storeSelected.name" type="text" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="exampleInputEmail1">Direccion</label>
+        <input [(ngModel)]="storeSelected.address.street" type="text" class="form-control">
+  
+        <label for="exampleInputEmail1">Ciudad</label>
+        <input [(ngModel)]="storeSelected.address.city" type="text" class="form-control">
+  
+        <label for="exampleInputEmail1">Localidad</label>
+        <input [(ngModel)]="storeSelected.address.state" type="text" class="form-control">
+  
+        <label for="exampleInputEmail1">Codigo Postal</label>
+        <input [(ngModel)]="storeSelected.address.postalCode" type="text" class="form-control">
+  
+        <label for="exampleInputEmail1">Pais</label>
+        <input [(ngModel)]="storeSelected.address.country" type="text" class="form-control">
+      </div>
+  
+      <button type="submit" class="btn btn-warning" (click)="updateStore()">Editar</button>
+    
+    </div>
+  </div>
+
+  <div class="collapse card card-body" id="collapseCreateDraw">
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+
+</div>
+
 </div>
