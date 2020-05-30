@@ -5,16 +5,17 @@ body {
 .row {
 	
   justify-content: center;
+  
 }
 
-#forma {
-  
-	margin-top:10%;
+.container {
+  position: relative;
+  margin-top:10%;
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 500px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
- 
+
 }
 #myVideo {
   position: fixed;
@@ -22,8 +23,4 @@ body {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-}
-.container {
-   position: relative;
-   width: 100%;
 }
