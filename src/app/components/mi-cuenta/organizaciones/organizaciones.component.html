@@ -34,18 +34,17 @@
   <hr>
 
 
-
+ 
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-warning" data-toggle="collapse" href="#collapseExample"
-      aria-controls="collapseExample"> / Editar Organizacion</button>
+    <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#collapseExample"> / Editar Organizacion</button>
     <button type="button" class="btn btn-danger" (click)="deleteOrganization()"> X Eliminar Organizacion</button>
     <button type="button" class="btn btn-primary" (click)="newStore()">+ Crear sucursal</button>
-    <button type="button" class="btn btn-info" (click)="goBackOrganizations()">
-      << Volver</button>
+    <button type="button" class="btn btn-info" (click)="goBackOrganizations()">Volver</button>
   </div>
+  
 
 
-  <div class="collapse" id="collapseExample">
+  <div id="collapseExample"  class="collapse">
     <div class="card card-body">
 
       <div class="form-group">
